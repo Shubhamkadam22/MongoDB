@@ -33,3 +33,61 @@ user2
 }).catch((err) => {
     console.log(err);
 });
+
+User.find({age:{$gt:4}}).then((res) => {
+    console.log(res[0].name);
+}).catch((err) => {    
+    console.log(err);
+});
+
+
+//findone
+
+User.findOne({age:{$gt:4}}).then((res) => {
+    console.log(res.name);
+}).catch((err) => {    
+    console.log(err);
+});
+
+
+//upadate
+User.updateOne({name: "sat"}, {age: 6}).then((res) => {
+    console.log(res);
+}).catch((err) => {
+    console.log(err);
+});
+
+//update many
+User.updateMany({age:{$gt:4}}, {age: 6}).then((res) => {
+    console.log(res);
+}).catch((err) => {
+    console.log(err);
+});
+
+//model.findByoneAndUpdate
+User.findOneAndUpdate({name: "sat"}, {age: 7}, {new: true}).then((res) => {
+    console.log(res);
+}).catch((err) => {
+    console.log(err);
+}); 
+
+//model.findByIdAndUpdate
+User.findByIdAndUpdate("64a9c8e5b1d9c0f1e8b4567", {age: 8}, {new: true}).then((res) => {
+    console.log(res);
+}).catch((err) => {
+    console.log(err);
+});
+
+//deleteone
+User.deleteOne({name: "sat"}).then((res) => {
+    console.log(res);
+}).catch((err) => {
+    console.log(err);
+});
+
+//deleteMany
+User.deleteMany({name: "sat"}).then((res) => {
+    console.log(res);
+}).catch((err) => {
+    console.log(err);
+});
