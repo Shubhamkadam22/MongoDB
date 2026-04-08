@@ -91,3 +91,25 @@ User.deleteMany({name: "sat"}).then((res) => {
 }).catch((err) => {
     console.log(err);
 });
+
+//findOneAndDelete  
+User.findOneAndDelete({name: "sat"}).then((res) => {
+    console.log(res);
+}   ).catch((err) => {
+    console.log(err);
+});
+
+//findByIdAndDelete
+User.findByIdAndDelete("64a9c8e5b1d9c0f1e8b4567").then((res) => {
+    console.log(res);
+}).catch((err) => {
+    console.log(err);
+});             
+//find
+User.find({age:{$gt:4}}).then((res) => {
+    console.log(res);
+}).catch((err) => {    
+    console.log(err);
+});
+
+//
